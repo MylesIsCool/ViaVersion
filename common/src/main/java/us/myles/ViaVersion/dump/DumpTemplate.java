@@ -23,12 +23,14 @@ import java.util.Map;
 
 public class DumpTemplate {
     private final VersionInfo versionInfo;
+    private final RuntimeInfo runtimeInfo;
     private final Map<String, Object> configuration;
     private final JsonObject platformDump;
     private final JsonObject injectionDump;
 
-    public DumpTemplate(VersionInfo versionInfo, Map<String, Object> configuration, JsonObject platformDump, JsonObject injectionDump) {
+    public DumpTemplate(VersionInfo versionInfo, RuntimeInfo runtimeInfo, Map<String, Object> configuration, JsonObject platformDump, JsonObject injectionDump) {
         this.versionInfo = versionInfo;
+        this.runtimeInfo = runtimeInfo;
         this.configuration = configuration;
         this.platformDump = platformDump;
         this.injectionDump = injectionDump;
@@ -36,6 +38,10 @@ public class DumpTemplate {
 
     public VersionInfo getVersionInfo() {
         return versionInfo;
+    }
+
+    public RuntimeInfo getRuntimeInfo() {
+        return runtimeInfo;
     }
 
     public Map<String, Object> getConfiguration() {

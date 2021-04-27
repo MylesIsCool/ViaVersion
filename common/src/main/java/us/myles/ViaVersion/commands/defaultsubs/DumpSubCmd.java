@@ -24,6 +24,7 @@ import us.myles.ViaVersion.api.Via;
 import us.myles.ViaVersion.api.command.ViaCommandSender;
 import us.myles.ViaVersion.api.command.ViaSubCommand;
 import us.myles.ViaVersion.dump.DumpTemplate;
+import us.myles.ViaVersion.dump.RuntimeInfo;
 import us.myles.ViaVersion.dump.VersionInfo;
 import us.myles.ViaVersion.util.GsonUtil;
 
@@ -65,7 +66,7 @@ public class DumpSubCmd extends ViaSubCommand {
 
         Map<String, Object> configuration = Via.getPlatform().getConfigurationProvider().getValues();
 
-        DumpTemplate template = new DumpTemplate(version, configuration, Via.getPlatform().getDump(), Via.getManager().getInjector().getDump());
+        DumpTemplate template = new DumpTemplate(version, new RuntimeInfo(), configuration, Via.getPlatform().getDump(), Via.getManager().getInjector().getDump());
 
         Via.getPlatform().runAsync(new Runnable() {
             @Override
