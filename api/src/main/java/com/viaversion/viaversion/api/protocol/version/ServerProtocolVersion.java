@@ -35,7 +35,7 @@ public interface ServerProtocolVersion {
     int lowestSupportedVersion();
 
     /**
-     * Returns the lowest supported protocol version by this server.
+     * Returns the highest supported protocol version by this server.
      * This and {@link #lowestSupportedVersion()} should only differ on proxy servers supporting multiple versions.
      *
      * @return highest supported protocol version
